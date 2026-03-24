@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Typewriter effect for About section
-    const aboutText = `Part time gamer, full time developer. I am a full-stack developer passionate about building scalable, elegant, and pixel-perfect applications. With experience across the MERN stack, I craft software that levels up real-world workflows. Ready to join your guild and conquer the next coding quest!`;
+    const aboutText = `Part time Gamer, Full time developer. I am a full-stack developer passionate about building scalable, elegant, and pixel-perfect applications. With experience across the MERN stack, I craft software that levels up real-world workflows. Ready to join your guild and conquer the next coding quest!`;
     const speed = 50; // typing speed in milliseconds
     let i = 0;
     const typewriterElement = document.getElementById('typewriter-text');
