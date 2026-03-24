@@ -423,20 +423,73 @@ body.light-mode .btn-retro { background: #EEDFA3; color: var(--text-color); }
 body.light-mode .btn-retro:hover { background: var(--text-color); color: #FDF5E6; }
 body.light-mode .scanlines { opacity: 0.08; }
 
+/* Theme Toggle Switch */
 .theme-switch-wrapper {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 100;
+    z-index: 1000;
 }
 
-.theme-toggle {
-    font-size: 1.5rem;
+.theme-switch {
+    display: inline-block;
+    height: 38px;
+    position: relative;
+    width: 76px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
     cursor: pointer;
-    text-shadow: none;
-    transition: transform 0.2s;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border: 3px solid var(--border-color);
+    box-shadow: 3px 3px 0 0 var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
+body.light-mode .slider {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.slider .icon {
+    font-size: 16px;
+    z-index: 1;
+}
+
+.slider .arcade-stick {
+    background-color: #f0f; /* Match accent magenta for Dark Mode */
+    bottom: 0px;
+    height: 32px;
+    left: 0px;
+    position: absolute;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy arcade joystick feel */
+    width: 38px;
+    z-index: 2;
+    border: 3px solid var(--border-color);
+    box-shadow: inset 4px 4px 0 0 rgba(255,255,255,0.4); 
+}
+
+input:checked + .slider .arcade-stick {
+    transform: translateX(32px);
+    background-color: #E52521; /* Mario Red for Light Mode */
+}
+
+.theme-switch:active .arcade-stick {
+    width: 45px; /* Squish effect when pressing */
+}
+
+input:checked:active + .slider .arcade-stick {
+    transform: translateX(25px);
 }

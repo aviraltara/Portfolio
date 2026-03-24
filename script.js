@@ -78,21 +78,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Theme toggle logic
-    const themeBtn = document.getElementById('theme-toggle');
+    // Arcade Theme Switch logic
+    const toggleCheckbox = document.getElementById('checkbox');
     
     // Initialize theme based on localStorage
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
-        if (themeBtn) themeBtn.innerText = '🌙';
+        if (toggleCheckbox) toggleCheckbox.checked = true;
     }
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
-            themeBtn.innerText = isLight ? '🌙' : '☀️';
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    if (toggleCheckbox) {
+        toggleCheckbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.classList.remove('light-mode');
+                localStorage.setItem('theme', 'dark');
+            }
         });
     }
 });
