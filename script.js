@@ -1,22 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.getElementById('start-btn');
     const startScreen = document.getElementById('start-screen');
-    const bgMusic = document.getElementById('bg-music');
-
-    // Attempt to play background music immediately (browsers block this until interaction on most devices)
-    if (bgMusic) {
-        bgMusic.volume = 0.2;
-        bgMusic.play().catch(e => console.log('Autoplay blocked pending interaction.'));
-    }
 
     if (startBtn && startScreen) {
         startBtn.addEventListener('click', () => {
-            // Unlock background music immediately but keep it muted
-            if (bgMusic && bgMusic.paused) {
-                bgMusic.volume = 0;
-                bgMusic.play().catch(e => console.log('Audio play blocked:', e));
-            }
-
             // Synthesize an iconic Mario Coin sound (B5 to E6) - Guaranteed to play without 404s!
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             const oscillator = audioCtx.createOscillator();
@@ -33,27 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             gainNode.connect(audioCtx.destination);
             oscillator.start();
             oscillator.stop(audioCtx.currentTime + 0.5);
-
-            // Restore background music volume right after the coin beep finishes
-            setTimeout(() => {
-                if (bgMusic) bgMusic.volume = 0.2;
-            }, 500);
-
-            // Fade out and stop background music gracefully after 12 seconds
-            setTimeout(() => {
-                if (bgMusic) {
-                    let vol = bgMusic.volume;
-                    let fade = setInterval(() => {
-                        if (vol > 0.01) {
-                            vol -= 0.01;
-                            bgMusic.volume = Math.max(0, vol);
-                        } else {
-                            bgMusic.pause();
-                            clearInterval(fade);
-                        }
-                    }, 100); 
-                }
-            }, 12000);
 
             startScreen.classList.add('slide-up');
             document.body.classList.remove('locked');
