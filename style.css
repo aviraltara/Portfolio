@@ -357,7 +357,10 @@ nav ul {
 }
 
 .btn-retro {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     padding: 15px 30px;
     background: #000;
     border: 3px solid var(--text-color);
