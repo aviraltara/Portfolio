@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Portfolio - Aviral Tara</title>
+    <!-- Google Fonts: Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Devicons for Skill Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+    <div class="crt"></div>
+    <div class="scanlines"></div>
+
+    <!-- START SCREEN OVERLAY -->
+    <div id="start-screen" class="start-screen">
+        <div class="start-content">
+            <h1>HELLO WORLD</h1>
+            <h2 class="subtitle">PLAYER 1</h2>
+            <button id="start-btn" class="blink btn-nostyle">PRESS START TO CONTINUE_</button>
+        </div>
+    </div>
+
+    <!-- AUDIO ELEMENTS -->
+    <audio id="bg-music" src="https://ia800504.us.archive.org/33/items/SuperMarioBros.ThemeMusic/SuperMarioBros.ogg" preload="auto" loop></audio>
+    
+    <div class="container">
+        <!-- HEADER -->
+        <header class="hero pixel-box" style="padding: 20px;">
+            <h1 style="font-size: 1.5rem; margin-bottom: 0;">AVIRAL TARA</h1>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav class="pixel-box">
+            <ul>
+                <li><a href="#about">> ABOUT</a></li>
+                <li><a href="#skills">> SKILLS</a></li>
+                <li><a href="#projects">> PROJECTS</a></li>
+                <li><a href="#reviews">> REVIEWS</a></li>
+                <li><a href="#links">> LINKS</a></li>
+            </ul>
+        </nav>
+
+        <!-- ABOUT -->
+        <section id="about" class="pixel-box">
+            <div class="section-title">
+                <h2><span class="icon">♦</span> ABOUT_ME</h2>
+            </div>
+            <div class="content">
+                <p id="typewriter-text"></p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="pixel-box">
+            <div class="section-title">
+                <h2><span class="icon">⚔️</span> TECH_STACK</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                <!-- MERN Stack -->
+                <div class="skill-item">
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-express-original"></i>
+                    <span>Express</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-nodejs-plain colored"></i>
+                    <span>Node.js</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="pixel-box">
+            <div class="section-title">
+                <h2><span class="icon">QUESTS</span> PROJECTS</h2>
+            </div>
+            
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="project-card pixel-box-inner">
+                    <div class="project-header">
+                        <h3>CrowdShield</h3>
+                        <span class="year">2024-2025</span>
+                    </div>
+                    <p class="project-sub">IoT-based Stampede Prevention | Winner: SprintHacks 3.0</p>
+                    <ul class="project-details">
+                        <li>Arduino-based system detecting abnormal crowd behavior using sound, pressure, motion, and temperature sensors.</li>
+                        <li>Real-time alerts via buzzer and wireless notifications to prevent stampedes.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">IoT sensors</span>
+                        <span class="tag">Real-Time Monitoring</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card pixel-box-inner">
+                    <div class="project-header">
+                        <h3>Bulletin</h3>
+                        <span class="year">2024-2025</span>
+                    </div>
+                    <p class="project-sub">News Curation Website</p>
+                    <ul class="project-details">
+                        <li>Developed a responsive news platform fetching and categorizing news from multiple top sources with API rotation to prevent limits.</li>
+                        <li>Enabled category, language, and country filters for a personalized user experience.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">React.js</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">newsdata.io API</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card pixel-box-inner">
+                    <div class="project-header">
+                        <h3>LinkShort</h3>
+                        <span class="year">2024-2025</span>
+                    </div>
+                    <p class="project-sub">URL Shortener Analytics</p>
+                    <ul class="project-details">
+                        <li>Full-stack URL shortener with RESTful API using Node.js, Express, and MongoDB.</li>
+                        <li>React frontend dashboard for creating, managing, and tracking shortened URLs with click analytics.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">React.js</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="reviews" class="pixel-box npc-dialog">
+            <div class="section-title">
+                <h2><span class="icon">💬</span> REVIEWS</h2>
+            </div>
+            <div class="dialog-box">
+                <div class="npc-name">Client: UnknownHero99</div>
+                <p class="npc-text">"Outstanding work! Completed the quest exactly as specified. The codebase is clean and runs flawlessly without any bugs!"</p>
+                <div class="dialog-arrow blink">▼</div>
+            </div>
+            <div class="dialog-box mt-4">
+                <div class="npc-name">Client: DungeonMaster</div>
+                <p class="npc-text">"Transformed our ideas into reality. Great communication and solid architecture using MERN stack. Would hire again for the next raid!"</p>
+                <div class="dialog-arrow blink">▼</div>
+            </div>
+        </section>
+
+        <!-- LINKS -->
+        <section id="links" class="pixel-box">
+            <div class="section-title">
+                <h2><span class="icon">🔗</span> CONNECT</h2>
+            </div>
+            <div class="links-grid">
+                <a href="https://github.com/aviraltara" class="btn-retro" target="_blank">
+                    <i class="devicon-github-original"></i> GITHUB
+                </a>
+                <a href="https://www.linkedin.com/in/aviraltara/" class="btn-retro" target="_blank">
+                    <i class="devicon-linkedin-plain"></i> LINKEDIN
+                </a>
+                <a href="https://leetcode.com/u/aviral_tara/" class="btn-retro" target="_blank">
+                    <span>{ }</span> LEETCODE
+                </a>
+                <a href="https://drive.google.com/file/d/15vxEkz1AOAsU-FgF5thV7Za7g1aWoWRG/view?usp=sharing" class="btn-retro" target="_blank">
+                    <span>📄</span> RESUME
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>GAME OVER - INSERT COIN TO PLAY AGAIN</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
