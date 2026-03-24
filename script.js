@@ -78,6 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Back to top logic
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // Arcade Theme Switch logic
     const toggleCheckbox = document.getElementById('checkbox');
     
