@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         startBtn.addEventListener('click', () => {
             // Synthesize an iconic Mario Coin sound (B5 to E6) - Guaranteed to play without 404s!
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
             const oscillator = audioCtx.createOscillator();
             const gainNode = audioCtx.createGain();
 
@@ -13,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             oscillator.frequency.setValueAtTime(987.77, audioCtx.currentTime); // B5
             oscillator.frequency.setValueAtTime(1318.51, audioCtx.currentTime + 0.1); // E6
 
-            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
             gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.4);
 
             oscillator.connect(gainNode);
